@@ -1,0 +1,14 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+  Toutes les categories
+{% endblock %}
+
+{% block main %}
+  <div>{{something}}</div>
+  <ul class="list-group">
+  {% for element in categories %}
+    <li class="list-group-item"><a href="./categorie/{{element.id}}/">{{element.label}}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

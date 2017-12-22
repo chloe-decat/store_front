@@ -1,0 +1,30 @@
+
+<style>
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+</style>
+{% extends "layout.njk" %}
+
+{% block title %}
+  Tous les produits de ma categorie
+{% endblock %}
+
+{% block main %}
+  <div class="card-columns">
+  {% for element in products %}
+  <div class="card">
+    <img class="card-img-top" src="https://www.decathlon.fr/media/{{element.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">{{element.title}}</h4>
+      <a href=/product/{{element.id}} class="btn btn-dark">See</a>
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+{% endblock %}
